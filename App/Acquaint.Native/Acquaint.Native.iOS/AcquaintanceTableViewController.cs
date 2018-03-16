@@ -90,10 +90,10 @@ namespace Acquaint.Native.iOS
 				System.Diagnostics.Debug.WriteLine($"Error getting acquaintances: {ex.Message}");
 
 				// present an alert about the failure
-				using (var alert = new UIAlertView("Error getting acquaintances", "Ensure you have a network connection, and that a valid backend service URL is present in the app settings.", null, "OK"))
-				{
-					alert.Show();
-				}
+
+				var alert = UIAlertController.Create("Error getting acquaintances", "Ensure you have a network connection, and that a valid backend service URL is present in the app settings.", UIAlertControllerStyle.Alert);
+				alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, x => { }));
+				PresentViewController(alert, true, null);
 			}
 			finally
 			{

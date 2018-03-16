@@ -20,6 +20,7 @@ namespace Acquaint.Native.iOS
 		bool _IsNew;
 
 		Acquaintance _Acquaintance;
+
 		public Acquaintance Acquaintance
 		{
 			get { return _Acquaintance; }
