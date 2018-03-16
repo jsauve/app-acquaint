@@ -1,8 +1,7 @@
 ﻿using System;
 using Acquaint.Abstractions;
-using Acquaint.Data;
 using Acquaint.Models;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using UIKit;
 
 namespace Acquaint.Native.iOS

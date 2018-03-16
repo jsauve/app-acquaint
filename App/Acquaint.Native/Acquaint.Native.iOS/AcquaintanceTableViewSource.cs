@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Acquaint.Abstractions;
 using Acquaint.Models;
+using CommonServiceLocator;
 using Foundation;
-using Microsoft.Practices.ServiceLocation;
 using UIKit;
 
 namespace Acquaint.Native.iOS

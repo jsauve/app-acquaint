@@ -6,9 +6,9 @@ using Acquaint.Models;
 using Acquaint.Util;
 using Autofac;
 using Autofac.Extras.CommonServiceLocator;
+using CommonServiceLocator;
 using Foundation;
 using HockeyApp.iOS;
-using Microsoft.Practices.ServiceLocation;
 using UIKit;
 
 namespace Acquaint.Native.iOS
@@ -109,7 +109,8 @@ namespace Acquaint.Native.iOS
             {
                 var builder = new ContainerBuilder();
                 builder.RegisterInstance(_LazyFilesystemOnlyAcquaintanceDataSource.Value).As<IDataSource<Acquaintance>>();
-                builder.Update(_IoCContainer);
+                builder.Build();
+                //builder.Update(_IoCContainer);
                 return;
             }
 
@@ -118,7 +119,8 @@ namespace Acquaint.Native.iOS
             {
                 var builder = new ContainerBuilder();
                 builder.RegisterInstance(_LazyAzureAcquaintanceSource.Value).As<IDataSource<Acquaintance>>();
-                builder.Update(_IoCContainer);
+                builder.Build();
+                //builder.Update(_IoCContainer);
             }
         }
 
